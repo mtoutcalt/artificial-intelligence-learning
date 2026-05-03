@@ -1,4 +1,4 @@
-# AWS Certified AI Practitioner — Domain 1 Practice Questions
+# AWS Certified AI Practitioner — Practice Questions
 ## Fundamentals of AI and ML
 
 ---
@@ -345,4 +345,371 @@ A model was highly accurate last year but has degraded steadily over 6 months as
 **✅ Answer: D — Model drift**
  
 When the real world changes but the model doesn't, performance degrades over time. Gradual decline in accuracy following a behavioral or environmental shift is the key signal for model drift.
- 
+
+---
+
+### Q22 — Data Splitting
+
+A data scientist splits her dataset into two parts: 80% for training and 20% for testing. She trains several models, compares them on the test set, and picks the best one. A senior engineer warns her this approach is flawed. What is the correct fix?
+
+- A) Use all the data for training to maximize model performance
+- B) Add a separate validation set so the test set is never used during model selection
+- C) Increase the training split to 95% to reduce overfitting
+- D) Apply data augmentation before splitting
+
+**✅ Answer: B — Add a separate validation set**
+
+Every time she compares models on the test set, the test set is influencing her decisions — it's no longer a true blind evaluation.
+
+**The correct 3-way split:**
+
+| Split | Purpose |
+|---|---|
+| **Training set** | Model learns from this |
+| **Validation set** | You compare & tune models on this |
+| **Test set** | Final, one-time blind evaluation only |
+
+Think of the test set like a final exam — if you keep peeking at it while studying, your score doesn't mean anything anymore.
+
+---
+
+### Q23 — Transfer Learning
+
+A startup wants to build an image recognition model to identify rare bird species. They only have 500 labeled photos. A researcher suggests using a model already trained on millions of general images and adapting it for their task. What technique is this?
+
+- A) Reinforcement learning
+- B) Data augmentation
+- C) Transfer learning
+- D) Semi-supervised learning
+
+**✅ Answer: C — Transfer learning**
+
+The key phrase is *"already trained on millions of general images and adapting it for their task."* Transfer learning takes knowledge a model built up on one task and repurposes it for another.
+
+It solves two problems at once:
+- **Small dataset problem** — 500 photos isn't enough to train from scratch, but the model already "knows" what edges, shapes, and textures look like
+- **Cost/time problem** — training from scratch on millions of images is expensive; you're skipping that
+
+---
+
+### Q24 — Regression vs Classification
+
+A model is trained to predict the exact sale price of a house given its features (size, location, age). Which type of ML task is this?
+
+- A) Binary classification
+- B) Multi-class classification
+- C) Clustering
+- D) Regression
+
+**✅ Answer: D — Regression**
+
+The giveaway is *"predict the exact sale price"* — any time a model outputs a continuous number, that's regression.
+
+| Task | Output | Example |
+|---|---|---|
+| **Regression** | A number on a scale | House price: $347,000 |
+| **Binary classification** | One of two categories | Spam or not spam |
+| **Multi-class classification** | One of many categories | Cat, dog, or bird |
+| **Clustering** | Groups discovered by the model | Customer segments |
+
+**Simple rule:** Ask yourself *"is the answer a number or a category?"* Number → regression. Category → classification.
+
+---
+
+### Q25 — Responsible AI
+
+A company deploys a hiring algorithm and later learns it performs significantly worse for candidates from certain universities because those schools were underrepresented in the training data. Which responsible AI principle is most directly violated?
+
+- A) Explainability
+- B) Fairness
+- C) Robustness
+- D) Privacy
+
+**✅ Answer: B — Fairness**
+
+The model performing *worse for a specific group* due to underrepresentation in training data is a textbook fairness violation.
+
+| Principle | What it means | Example violation |
+|---|---|---|
+| **Fairness** | Model performs equitably across groups | Hiring model disadvantages certain candidates |
+| **Explainability** | You can understand *why* the model made a decision | A loan denial with no reason given |
+| **Robustness** | Model performs reliably under unexpected conditions | Model breaks when given slightly noisy data |
+| **Privacy** | Personal data is protected | Training data exposes sensitive user info |
+
+Fairness issues almost always trace back to the training data — either a group is underrepresented, or the historical data itself reflected human bias.
+
+---
+
+### Q26 — Batch vs Real-Time Inference
+
+A bank wants to flag fraudulent transactions *as they happen* so cards can be blocked immediately. Another bank runs fraud checks nightly on the previous day's transactions. Which inference type does each bank use, respectively?
+
+- A) Batch inference / Real-time inference
+- B) Real-time inference / Batch inference
+- C) Both use real-time inference
+- D) Both use batch inference
+
+**✅ Answer: B — Real-time inference / Batch inference**
+
+| Type | When it runs | Latency | Example |
+|---|---|---|---|
+| **Real-time inference** | Instantly, as data arrives | Milliseconds | Fraud detection, autocomplete |
+| **Batch inference** | On a schedule, on accumulated data | Minutes/hours | Nightly reports, monthly credit scoring |
+
+**Giveaway phrases:**
+- *"as it happens," "immediately," "live"* → Real-time
+- *"nightly," "weekly," "end of day," "accumulated"* → Batch
+
+---
+
+### Q27 — Generative AI
+
+A developer uses an AI system to generate entirely new product descriptions by typing a plain English instruction like *"write a playful description for a kids' backpack."* The system produces original text it was never explicitly shown before. What best describes this type of AI?
+
+- A) Discriminative AI
+- B) Supervised learning
+- C) Generative AI
+- D) Reinforcement learning
+
+**✅ Answer: C — Generative AI**
+
+The giveaway is *"generates entirely new content"* from a plain English instruction.
+
+| Type | What it does | Example |
+|---|---|---|
+| **Generative AI** | Creates new content (text, images, audio) | Writing product descriptions, generating images |
+| **Discriminative AI** | Classifies or labels existing data | Spam filter, fraud detection, image classification |
+
+- Discriminative = *draws a boundary* between things
+- Generative = *creates something new*
+
+---
+
+### Q28 — Prompt Engineering
+
+A developer is working with a large language model and wants it to answer customer service questions in a formal, professional tone. Instead of retraining the model, she experiments with different ways of wording her instructions to get better outputs. What technique is she using?
+
+- A) Fine-tuning
+- B) Transfer learning
+- C) Prompt engineering
+- D) Hyperparameter tuning
+
+**✅ Answer: C — Prompt engineering**
+
+The key phrase is *"instead of retraining the model"* — she's getting better results purely by changing how she words her instructions.
+
+| Technique | Changes the model? | How it works | Cost |
+|---|---|---|---|
+| **Prompt engineering** | No | Craft better inputs | Very cheap |
+| **Fine-tuning** | Yes | Retrain on new domain-specific data | Moderate |
+| **Transfer learning** | Yes | Adapt a pre-trained model to a new task | High |
+
+**Common prompt engineering techniques:**
+- **Zero-shot** — just give the instruction, no examples
+- **Few-shot** — include a few examples in the prompt to guide the model
+- **Chain of thought** — ask the model to reason step by step
+
+---
+
+### Q29 — Foundation Models
+
+A company wants to build a customer support chatbot. Instead of training a model from scratch, they access a large pre-trained model via API and adapt it to their use case. What term best describes the large pre-trained model they are using?
+
+- A) A supervised learning model
+- B) A foundation model
+- C) A clustering model
+- D) A reinforcement learning agent
+
+**✅ Answer: B — A foundation model**
+
+| Characteristic | Detail |
+|---|---|
+| **Size** | Trained on massive amounts of data |
+| **General purpose** | Can handle text, images, code and more |
+| **Adaptable** | Can be fine-tuned or prompted for specific tasks |
+| **Examples** | Claude, GPT-4, Llama, Amazon Titan |
+
+Instead of every company training their own model from scratch (extremely expensive), foundation models are built once and reused by many — you just adapt them via prompting or fine-tuning.
+
+---
+
+### Q30 — Retrieval Augmented Generation (RAG)
+
+A company's chatbot keeps giving outdated answers about their products because the foundation model it uses was trained on data from two years ago. A developer suggests connecting the model to the company's internal knowledge base so it can look up current information before responding. What technique is this?
+
+- A) Fine-tuning
+- B) Prompt engineering
+- C) Retrieval Augmented Generation (RAG)
+- D) Transfer learning
+
+**✅ Answer: C — Retrieval Augmented Generation (RAG)**
+
+The giveaway is *"connecting the model to an external knowledge base to look up current information."*
+
+**How RAG works:**
+1. User asks a question
+2. System searches the knowledge base for relevant information
+3. That information is injected into the prompt
+4. The model answers using both its training AND the retrieved info
+
+| | RAG | Fine-tuning |
+|---|---|---|
+| **How it works** | Connects model to external data at query time | Retrains model on new data |
+| **Best for** | Current, frequently changing information | Teaching the model a new style or domain |
+| **Cost** | Cheaper | More expensive |
+| **Data stays fresh?** | Yes, update the knowledge base anytime | No, model knowledge is frozen after training |
+
+---
+
+### Q31 — Hallucination
+
+A customer service chatbot built on a foundation model confidently tells a user that a product comes with a 5 year warranty. The company never offered this warranty — the model simply made it up and presented it as fact. What is this phenomenon called?
+
+- A) Model drift
+- B) Overfitting
+- C) Hallucination
+- D) Data leakage
+
+**✅ Answer: C — Hallucination**
+
+Foundation models are trained to produce fluent, confident-sounding responses. They don't have a built-in "I don't know" mechanism — they'll fill gaps in their knowledge with plausible-sounding but completely fabricated information.
+
+**How to reduce hallucinations:**
+
+| Technique | How it helps |
+|---|---|
+| **RAG** | Grounds responses in real, retrieved facts |
+| **Prompt engineering** | Instruct the model to say "I don't know" when uncertain |
+| **Fine-tuning** | Train on domain-specific accurate data |
+| **Human review** | Catch errors before they reach users |
+
+---
+
+### Q32 — Amazon Bedrock: Knowledge Bases
+
+A company wants to use Amazon Bedrock to build a chatbot that can answer questions about their internal HR policies. Their documents are stored in Amazon S3 and are updated monthly. They want the chatbot to always have access to the latest versions without retraining. Which Bedrock feature should they use?
+
+- A) Bedrock Fine-tuning
+- B) Bedrock Knowledge Bases
+- C) Bedrock Agents
+- D) Prompt engineering
+
+**✅ Answer: B — Bedrock Knowledge Bases**
+
+The giveaways are *"latest versions without retraining"* and *"documents stored in S3"* — that's RAG in action, and Knowledge Bases is Bedrock's built-in RAG feature.
+
+| | Knowledge Bases | Fine-tuning |
+|---|---|---|
+| **Monthly doc updates** | Just update S3, done | Retrain every month, expensive |
+| **Always current** | Yes | No |
+| **Cost** | Low | High |
+
+---
+
+### Q33 — Amazon Bedrock: Agents
+
+A travel company builds an AI assistant on Amazon Bedrock that can check flight availability, book tickets, and send confirmation emails — all in response to a single user request. Which Bedrock feature makes this possible?
+
+- A) Bedrock Knowledge Bases
+- B) Bedrock Fine-tuning
+- C) Bedrock Agents
+- D) Prompt engineering
+
+**✅ Answer: C — Bedrock Agents**
+
+The giveaway is the model *taking multiple actions* in sequence — checking availability, booking, then emailing.
+
+| | Regular model | Bedrock Agent |
+|---|---|---|
+| **What it does** | Answers questions | Takes actions in the world |
+| **Multi-step?** | No | Yes |
+| **Can call APIs?** | No | Yes |
+| **Example** | "What flights exist?" | "Find, book, and confirm a flight" |
+
+Think of a regular model as a very smart person who can only talk. An agent is that same person but they can also pick up the phone, open a browser, and send emails.
+
+---
+
+### Q34 — Amazon Bedrock: Prompt Engineering vs Fine-tuning
+
+A company is using Amazon Bedrock to build a legal document summarizer. The foundation model keeps responding in a casual, conversational tone which isn't appropriate for their lawyers. They want the model to always respond formally without changing the underlying model. What is the cheapest and fastest solution?
+
+- A) Fine-tune the model on formal legal documents
+- B) Use a different foundation model
+- C) Use prompt engineering to instruct the model to respond formally
+- D) Build a Bedrock Agent to reformat responses
+
+**✅ Answer: C — Prompt engineering**
+
+The giveaways are *"without changing the underlying model"* and *"cheapest and fastest."*
+
+**The cost/speed hierarchy:**
+
+| Approach | Cost | Speed | Changes model? |
+|---|---|---|---|
+| **Prompt engineering** | $ | Minutes | No |
+| **RAG / Knowledge Bases** | $$ | Hours | No |
+| **Fine-tuning** | $$$ | Days | Yes |
+
+When a question says "without retraining" or "cheapest solution," work left to right on that table.
+
+---
+
+### Q35 — Amazon Bedrock: Model Selection
+
+A startup is evaluating which foundation model to use on Amazon Bedrock. They need to generate photorealistic images from text descriptions for their interior design app. Which model family on Bedrock is most appropriate?
+
+- A) Amazon Titan
+- B) Anthropic Claude
+- C) Stability AI Stable Diffusion
+- D) Meta Llama
+
+**✅ Answer: C — Stability AI Stable Diffusion**
+
+The giveaway is *"photorealistic images from text descriptions"* — Stable Diffusion is specifically an image generation model.
+
+| Model | Provider | Best for |
+|---|---|---|
+| **Claude** | Anthropic | Text generation, reasoning, summarization |
+| **Titan** | Amazon | Text generation, embeddings, image generation |
+| **Llama** | Meta | Text generation, open source flexibility |
+| **Mistral** | Mistral | Text generation, lightweight and fast |
+| **Stable Diffusion** | Stability AI | Image generation from text |
+
+**Rule of thumb:**
+- Need to generate or understand **text**? → Claude, Titan, Llama, or Mistral
+- Need to generate **images**? → Stable Diffusion or Titan Image Generator
+
+---
+
+### Q36 — Amazon Bedrock: Guardrails
+
+A financial services company is deploying a customer facing chatbot on Amazon Bedrock. They are worried users might try to trick the model into giving investment advice, making politically controversial statements, or revealing sensitive competitor information. Which Bedrock feature should they use to prevent this?
+
+- A) Bedrock Agents
+- B) Bedrock Guardrails
+- C) Bedrock Knowledge Bases
+- D) Fine-tuning
+
+**✅ Answer: B — Bedrock Guardrails**
+
+The giveaway is the need to *prevent* specific types of harmful or off-topic outputs.
+
+**What Bedrock Guardrails can block:**
+
+| Category | Example |
+|---|---|
+| **Topic restrictions** | "Don't discuss competitor products" |
+| **Harmful content** | Hate speech, violence, explicit content |
+| **Sensitive information** | Block PII like credit card numbers |
+| **Grounding** | Flag responses not based in fact |
+| **Word filters** | Block specific words or phrases |
+
+**The full Bedrock feature map:**
+
+| Feature | Purpose |
+|---|---|
+| **Knowledge Bases** | Connect model to your documents (RAG) |
+| **Agents** | Multi-step actions and API calls |
+| **Fine-tuning** | Adapt model to your domain |
+| **Guardrails** | Control what the model can say |
