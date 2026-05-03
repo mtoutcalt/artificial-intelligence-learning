@@ -713,3 +713,69 @@ The giveaway is the need to *prevent* specific types of harmful or off-topic out
 | **Agents** | Multi-step actions and API calls |
 | **Fine-tuning** | Adapt model to your domain |
 | **Guardrails** | Control what the model can say |
+
+
+### Q37 — Semi-Supervised Learning
+
+A medical imaging company has 50,000 X-ray scans. Only 2,000 of them have been labeled by doctors (expensive and time-consuming). A researcher proposes training the model using *both* the 2,000 labeled scans and the 48,000 unlabeled ones together. What type of ML is this?
+
+- A) Supervised learning
+- B) Unsupervised learning
+- C) Reinforcement learning
+- D) Semi-supervised learning
+
+**✅ Answer: D — Semi-supervised learning**
+
+A mix of a small amount of labeled data and a large amount of unlabeled data trained together. It's the practical middle ground when labeling data is expensive. Watch for phrases like *"only a small portion is labeled"* or *"labeling is expensive."*
+
+---
+
+### Q38 — Responsible AI: Explainability
+
+A bank's AI model denies a customer's loan application. The customer asks why they were rejected, but the system only returns a score with no reasoning. A regulator flags this as a compliance concern. Which responsible AI principle is most directly violated?
+
+- A) Fairness
+- B) Robustness
+- C) Explainability
+- D) Privacy
+
+**✅ Answer: C — Explainability**
+
+Explainability is the principle that users (and regulators) should be able to understand *why* a model made a decision. A score with no reasoning is a classic black box problem. Note: fairness is about *who* is affected, explainability is about *why* a decision was made.
+
+---
+
+### Q39 — Context Window
+
+A developer is using a foundation model on Amazon Bedrock to summarize legal contracts. She notices that when she submits very long contracts, the model seems to ignore or "forget" content from earlier in the document. What is the most likely cause?
+
+- A) The model is hallucinating
+- B) The input has exceeded the model's context window
+- C) The model needs fine-tuning on legal documents
+- D) Model drift has occurred
+
+**✅ Answer: B — The input has exceeded the model's context window**
+
+The context window is the maximum amount of text a model can "see" at one time — once exceeded, earlier content gets dropped or ignored. Watch for phrases like *"forgets earlier parts"*, *"long documents"*, or *"ignores context from earlier."*
+
+---
+
+### Q40 — AWS AI Services
+
+A retail company wants to automatically extract the total amount, vendor name, and date from thousands of scanned paper invoices stored in S3 — without training a custom ML model. Which AWS service is best suited for this?
+
+- A) Amazon Rekognition
+- B) Amazon Comprehend
+- C) Amazon Textract
+- D) Amazon SageMaker
+
+**✅ Answer: C — Amazon Textract**
+
+| Service | What it does |
+|---|---|
+| **Textract** | Extracts text, forms, and structured data from scanned documents |
+| **Rekognition** | Detects objects, faces, and labels in images |
+| **Comprehend** | Understands and analyzes already extracted text (sentiment, entities) |
+| **SageMaker** | Build, train, and deploy custom ML models |
+
+The giveaways are *"scanned paper invoices"* and *"without training a custom model."*
