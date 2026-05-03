@@ -196,3 +196,153 @@ A company trains a model to detect defective products on a factory assembly line
 - **C** — Only 1% of products are defective, so a lazy model that always says "not defective" scores 99% accuracy without learning anything. Classic imbalanced data trap.
 - **B** — The model never predicts defective, so it catches zero actual defects. Recall = TP / (TP + FN) = 0 / (0 + 100) = 0%.
 
+---
+ 
+### Q12 — Types of ML
+ 
+A robotics company trains an AI to navigate a warehouse by rewarding it every time it successfully delivers a package and penalizing it when it collides with shelves. Which type of ML is this?
+ 
+- A) Supervised learning
+- B) Unsupervised learning
+- C) Reinforcement learning
+- D) Self-supervised learning
+**✅ Answer: C — Reinforcement learning**
+ 
+The key signals are *rewards, penalties, and an agent making decisions*. The model isn't learning from labeled examples — it's learning through trial and error in an environment. Watch for trigger phrases:
+- "rewards" / "penalties" / "agent" → Reinforcement learning
+---
+ 
+### Q13 — Bias in Training Data
+ 
+A company trains a loan approval model on 10 years of historical decisions. It later discovers the model approves loans at a significantly lower rate for certain demographic groups. What is the most likely root cause?
+ 
+- A) Overfitting to recent data
+- B) Model drift
+- C) Bias in the training data
+- D) Underfitting due to too few features
+**✅ Answer: C — Bias in the training data**
+ 
+Historical data often reflects past human biases. When a model trains on biased data, it learns and perpetuates those biases. This is one of the core responsible AI concerns on the exam. Always ask: *"Where did this data come from, and who made the original decisions?"*
+ 
+---
+ 
+### Q14 — Training vs Inference
+ 
+After a company finishes training a model that predicts equipment failures, they deploy it to a factory floor where it analyzes live sensor data every 30 seconds. What is this deployed phase called?
+ 
+- A) Training
+- B) Fine-tuning
+- C) Inference
+- D) Evaluation
+**✅ Answer: C — Inference**
+ 
+*Training* is when the model learns from data. *Inference* is when the trained model is used to make predictions on new, real-world data. The exam often tests whether you can distinguish these two phases.
+ 
+---
+ 
+### Q15 — Feature Engineering
+ 
+A data scientist is building a model to predict flight delays. The raw dataset includes a "departure timestamp" column. She creates three new columns from it: hour of day, day of week, and month. What technique is she applying?
+ 
+- A) Data augmentation
+- B) Regularization
+- C) Feature engineering
+- D) Hyperparameter tuning
+**✅ Answer: C — Feature engineering**
+ 
+Feature engineering is the process of transforming raw data into more useful inputs for a model. Extracting hour, day, and month from a timestamp is a classic example — the model can now learn patterns like "Friday evening flights delay more."
+ 
+**Quick eliminations:**
+- **Augmentation** — creating variations of existing data (mainly used for images)
+- **Regularization** — a technique to reduce overfitting by penalizing model complexity
+- **Hyperparameter tuning** — adjusting settings before training begins
+---
+ 
+### Q16 — Hyperparameters vs Parameters
+ 
+A machine learning engineer is tuning her neural network before training begins. She experiments with different learning rates, batch sizes, and numbers of hidden layers to improve performance. What is she adjusting?
+ 
+- A) Model parameters
+- B) Training labels
+- C) Hyperparameters
+- D) Feature weights
+**✅ Answer: C — Hyperparameters**
+ 
+*Parameters* (like weights and biases) are learned automatically by the model during training. *Hyperparameters* are set by the engineer *before* training and control how the training process itself works.
+ 
+| | Parameters | Hyperparameters |
+|---|---|---|
+| Set by | Model (learned during training) | Engineer (set before training) |
+| Examples | Weights, biases | Learning rate, batch size, epochs |
+| Adjusted via | Backpropagation | Manual tuning / AutoML |
+ 
+---
+ 
+### Q17 — Overfitting
+ 
+A model's performance on training data is great, but it fails on new data. You add more training examples and the gap closes. What was the original problem?
+ 
+- A) Underfitting
+- B) Model drift
+- C) Overfitting
+- D) Data leakage
+**✅ Answer: C — Overfitting**
+ 
+A large gap between training and test performance is the classic overfitting signal. Adding more training data is one of the standard fixes — it forces the model to learn generalizable patterns rather than memorizing examples.
+ 
+---
+ 
+### Q18 — Unsupervised Learning
+ 
+A recommendation system learns that users who buy hiking boots often buy wool socks, without being told to look for that relationship. What type of ML is this?
+ 
+- A) Supervised learning
+- B) Reinforcement learning
+- C) Deep learning
+- D) Unsupervised learning
+**✅ Answer: D — Unsupervised learning**
+ 
+No labels, no predefined answers — the model is discovering hidden structure and relationships in the data on its own. Association rule learning (finding purchase patterns) is a classic unsupervised technique.
+ 
+---
+ 
+### Q19 — Reinforcement Learning
+ 
+A self-driving car AI receives a +10 score for reaching its destination safely and a -5 score for every traffic violation. What type of ML is being used?
+ 
+- A) Supervised learning
+- B) Unsupervised learning
+- C) Reinforcement learning
+- D) Semi-supervised learning
+**✅ Answer: C — Reinforcement learning**
+ 
+Scores, rewards, and penalties given to an agent navigating an environment are the defining characteristics of reinforcement learning.
+ 
+---
+ 
+### Q20 — Evaluation Metrics: Recall
+ 
+A cancer screening model catches 95% of all real cancer cases but also flags many healthy patients as potentially cancerous. Which metric is high?
+ 
+- A) Precision
+- B) Accuracy
+- C) F1 Score
+- D) Recall
+**✅ Answer: D — Recall**
+ 
+The model is catching 95% of all actual cancer cases — that is the definition of high recall (TP / (TP + FN)). The fact that it also flags many healthy patients means precision is low, but the question asks only what is *high*.
+ 
+---
+ 
+### Q21 — Model Drift
+ 
+A model was highly accurate last year but has degraded steadily over 6 months as user behavior has shifted. What is the most likely cause?
+ 
+- A) Overfitting
+- B) Data leakage
+- C) Underfitting
+- D) Model drift
+**✅ Answer: D — Model drift**
+ 
+When the real world changes but the model doesn't, performance degrades over time. Gradual decline in accuracy following a behavioral or environmental shift is the key signal for model drift.
+ 
