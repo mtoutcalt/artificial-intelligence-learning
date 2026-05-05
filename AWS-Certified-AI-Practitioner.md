@@ -779,3 +779,279 @@ A retail company wants to automatically extract the total amount, vendor name, a
 | **SageMaker** | Build, train, and deploy custom ML models |
 
 The giveaways are *"scanned paper invoices"* and *"without training a custom model."*
+
+---
+
+### Q41 — Temperature
+
+A developer wants their foundation model to generate more creative, varied responses rather than always picking the most predictable next word. Which model parameter should they increase?
+
+- A) Max tokens
+- B) Top-P
+- C) Temperature
+- D) Batch size
+
+**✅ Answer: C — Temperature**
+
+Temperature controls how "creative" vs "predictable" a model's outputs are. Higher temperature = more randomness and variety. Lower temperature = more focused, deterministic responses.
+
+---
+
+### Q42 — AWS AI Services: Transcribe
+
+A company wants to add voice interaction to their customer service app. They need to convert what customers *say* into text so the AI can process it. Which AWS service handles this?
+
+- A) Amazon Polly
+- B) Amazon Transcribe
+- C) Amazon Lex
+- D) Amazon Comprehend
+
+**✅ Answer: B — Amazon Transcribe**
+
+Amazon Transcribe converts speech to text. Watch for similar services:
+
+| Service | What it does |
+|---|---|
+| **Transcribe** | Speech → Text |
+| **Polly** | Text → Speech |
+| **Lex** | Build conversational chatbots/voice assistants |
+| **Comprehend** | Analyzes text for sentiment, entities, key phrases |
+
+---
+
+### Q43 — AWS AI Services: Rekognition
+
+A media company wants to automatically detect celebrities and inappropriate content in millions of uploaded images and videos — without building a custom ML model. Which AWS service should they use?
+
+- A) Amazon Textract
+- B) Amazon Rekognition
+- C) Amazon Comprehend
+- D) Amazon SageMaker
+
+**✅ Answer: B — Amazon Rekognition**
+
+The giveaway is *"images and videos"* + *"celebrities and inappropriate content."* Textract is for extracting text from documents, not analyzing image/video content.
+
+| Service | What it does |
+|---|---|
+| **Rekognition** | Detects faces, objects, celebrities, unsafe content in images/video |
+| **Textract** | Extracts text and data from scanned documents |
+
+---
+
+### Q44 — Vector Databases
+
+A company stores millions of product descriptions as vector embeddings in a database. When a user searches for "comfortable running shoes," the system finds the most semantically similar products even if the exact words don't match. What type of database is being used?
+
+- A) Relational database
+- B) Graph database
+- C) Vector database
+- D) Time-series database
+
+**✅ Answer: C — Vector database**
+
+Vector databases store embeddings — numerical representations of meaning — and find results based on semantic similarity rather than exact keyword matches. This is the foundation of how RAG systems retrieve relevant documents.
+
+**Key giveaway phrases:**
+- *"semantically similar"*
+- *"meaning-based search"*
+- *"even if exact words don't match"*
+
+---
+
+### Q45 — AWS AI Services: Lex
+
+A company wants to build a chatbot for their website that can hold a natural back-and-forth conversation with customers to help them book appointments. Which AWS service is purpose-built for this?
+
+- A) Amazon Comprehend
+- B) Amazon Lex
+- C) Amazon Transcribe
+- D) Amazon Kendra
+
+**✅ Answer: B — Amazon Lex**
+
+Amazon Lex is purpose-built for building conversational interfaces — it's the same technology that powers Alexa. The giveaway was *"back-and-forth conversation"* and *"book appointments"* (a specific action/intent).
+
+---
+
+### Q46 — AWS AI Services: Kendra
+
+A law firm wants to allow employees to search through thousands of internal legal documents using natural language queries like *"find all contracts mentioning force majeure clauses signed after 2020."* Which AWS service is best suited for this?
+
+- A) Amazon Kendra
+- B) Amazon Lex
+- C) Amazon Textract
+- D) Amazon Comprehend
+
+**✅ Answer: A — Amazon Kendra**
+
+The giveaway is *"search through thousands of documents using natural language queries."* Kendra is AWS's intelligent enterprise search engine — it finds answers across large document collections.
+
+- **Textract** = *extract* data from a document
+- **Kendra** = *find* the right document (or answer) across many documents
+
+---
+
+### Q47 — AWS AI Services: Translate
+
+A company wants to automatically translate customer support emails from 10 different languages into English before they reach their support agents. Which AWS service should they use?
+
+- A) Amazon Comprehend
+- B) Amazon Transcribe
+- C) Amazon Translate
+- D) Amazon Polly
+
+**✅ Answer: C — Amazon Translate**
+
+Amazon Translate provides automated language translation between supported languages.
+
+**Full AWS AI Services cheat sheet:**
+
+| Service | One-liner |
+|---|---|
+| **Transcribe** | Speech → Text |
+| **Polly** | Text → Speech |
+| **Lex** | Build conversational chatbots |
+| **Comprehend** | Analyze text (sentiment, entities) |
+| **Translate** | Language translation |
+| **Rekognition** | Image & video analysis |
+| **Textract** | Extract text from documents |
+| **Kendra** | Intelligent enterprise search |
+
+---
+
+### Q48 — AWS AI Services: Personalize
+
+A retail company wants to automatically send personalized product recommendations to each customer based on their browsing and purchase history — similar to how Netflix recommends shows. Which AWS service is purpose-built for this?
+
+- A) Amazon Forecast
+- B) Amazon Personalize
+- C) Amazon Comprehend
+- D) Amazon SageMaker
+
+**✅ Answer: B — Amazon Personalize**
+
+Amazon Personalize is AWS's purpose-built service for real-time personalized recommendations.
+
+| Service | What it does | Giveaway phrase |
+|---|---|---|
+| **Personalize** | Recommends items to users based on behavior | "recommendations," "personalized," "users who bought X also bought Y" |
+| **Forecast** | Predicts future numerical values from time-series data | "predict demand," "inventory planning," "future sales" |
+
+---
+
+### Q49 — AWS AI Services: Forecast
+
+A retail chain wants to predict how many units of each product they'll need in their warehouses over the next 90 days, taking into account seasonality and past sales trends. Which AWS service is best suited for this?
+
+- A) Amazon Personalize
+- B) Amazon Rekognition
+- C) Amazon Forecast
+- D) Amazon Comprehend
+
+**✅ Answer: C — Amazon Forecast**
+
+The giveaways are *"predict how many units"* (a future number) and *"seasonality and past sales trends"* (time-series data). That's Amazon Forecast's sweet spot.
+
+---
+
+### Q50 — SageMaker Overview
+
+A data scientist wants to train a custom machine learning model on a large dataset, evaluate it, and then deploy it to a scalable API endpoint — all without managing any underlying servers or infrastructure. Which AWS service enables this end-to-end?
+
+- A) Amazon Bedrock
+- B) Amazon EC2
+- C) Amazon SageMaker
+- D) AWS Lambda
+
+**✅ Answer: C — Amazon SageMaker**
+
+SageMaker is AWS's fully managed end-to-end ML platform — it handles infrastructure so data scientists can focus on building models.
+
+| | SageMaker | Bedrock |
+|---|---|---|
+| **Use case** | Build and train custom ML models | Use pre-built foundation models |
+| **Flexibility** | High — bring your own algorithm | Lower — prompt/fine-tune existing models |
+| **Who uses it** | Data scientists, ML engineers | Developers building AI-powered apps |
+
+---
+
+### Q51 — SageMaker: Hyperparameter Tuning vs Autopilot
+
+A machine learning team wants to automatically test hundreds of different hyperparameter combinations for their chosen algorithm to find the best performing model, without manually running each experiment themselves. Which SageMaker feature should they use?
+
+- A) SageMaker Pipelines
+- B) SageMaker Autopilot
+- C) SageMaker Hyperparameter Tuning (Automatic Model Tuning)
+- D) SageMaker Ground Truth
+
+**✅ Answer: C — SageMaker Hyperparameter Tuning**
+
+| Feature | What it does |
+|---|---|
+| **Hyperparameter Tuning** | You provide the algorithm, it automatically finds the best hyperparameter combinations |
+| **Autopilot** | You provide the dataset, it automatically picks the algorithm AND the hyperparameters — fully hands off |
+
+The giveaway is that the team already knows which algorithm they want — they just want to optimize the settings. If the question said *"automatically build the best possible model from raw data,"* that would be Autopilot.
+
+---
+
+### Q52 — SageMaker: Ground Truth
+
+A company has thousands of unlabeled images of factory defects that need to be labeled by human workers before they can train a model. Which SageMaker feature helps manage this human labeling workflow?
+
+- A) SageMaker Autopilot
+- B) SageMaker Model Monitor
+- C) SageMaker Ground Truth
+- D) SageMaker Pipelines
+
+**✅ Answer: C — SageMaker Ground Truth**
+
+The giveaway was *"unlabeled data"* + *"human workers"* + *"labeling."* Ground Truth coordinates human labelers and can use active learning to automatically label easy examples, saving human effort for harder ones.
+
+| Feature | What it does |
+|---|---|
+| **Ground Truth** | Manages human labeling workflows for training data |
+| **Pipelines** | Automates and orchestrates the end-to-end ML workflow |
+| **Model Monitor** | Monitors deployed models for drift and data quality issues |
+| **Autopilot** | Automatically builds and tunes models from raw data |
+
+---
+
+### Q53 — SageMaker: Model Monitor
+
+After deploying a fraud detection model to production, a team wants to automatically receive alerts if the model starts receiving input data that looks very different from what it was trained on. Which SageMaker feature enables this?
+
+- A) SageMaker Ground Truth
+- B) SageMaker Model Monitor
+- C) SageMaker Autopilot
+- D) SageMaker Clarify
+
+**✅ Answer: B — SageMaker Model Monitor**
+
+The giveaway was *"input data that looks very different from training data"* — that's data drift. Model Monitor watches for it in production and triggers alerts.
+
+- **Model Monitor** = watches for *data/performance drift* in production
+- **Clarify** = detects *bias* and explains *decisions*
+
+---
+
+### Q54 — SageMaker: Clarify
+
+A company trains a model on SageMaker and later discovers it's making biased predictions against certain demographic groups. They want a tool that can automatically analyze the model and training data to detect and explain sources of bias. Which SageMaker feature should they use?
+
+- A) SageMaker Model Monitor
+- B) SageMaker Ground Truth
+- C) SageMaker Clarify
+- D) SageMaker Pipelines
+
+**✅ Answer: C — SageMaker Clarify**
+
+SageMaker Clarify is purpose-built for two things:
+
+| Capability | What it does |
+|---|---|
+| **Bias detection** | Analyzes training data and model predictions for unfair bias across demographic groups |
+| **Explainability** | Explains *why* a model made a specific prediction (which features mattered most) |
+
+
