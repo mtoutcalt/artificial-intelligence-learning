@@ -1,6 +1,47 @@
 # AWS Certified AI Practitioner — Practice Questions
 ## Fundamentals of AI and ML
 
+
+Looking at your practice doc, here are the notable gaps for the AWS AI Practitioner exam:
+AWS Services Not Covered
+
+Amazon Q (Business and Developer) — this comes up a lot on the exam now
+Amazon Comprehend Medical (separate from standard Comprehend)
+Amazon Fraud Detector
+AWS DeepRacer / AI learning tools
+
+SageMaker Features Missing
+
+SageMaker Canvas (no-code ML for non-developers)
+SageMaker JumpStart (pre-built models and solutions hub)
+SageMaker Feature Store
+SageMaker Data Wrangler
+SageMaker Experiments
+
+Generative AI & LLM Concepts
+
+Tokenization and how tokens work (and how they affect cost)
+Embeddings (what they are beyond just "vectors")
+Fine-tuning specifics — PEFT, LoRA
+Prompt injection attacks and adversarial prompting
+Evaluation metrics for generative AI (BLEU, ROUGE scores)
+Continued pre-training vs fine-tuning vs RAG (the full comparison)
+
+Responsible AI Gaps
+
+Specific bias types (selection bias, reporting bias, etc.)
+AWS AI Service Cards and Model Cards
+Human-in-the-loop workflows
+Sustainability/carbon footprint of training large models
+
+Infrastructure & Cost
+
+AWS Trainium and AWS Inferentia chips (purpose-built for ML)
+Spot instances for training cost reduction
+Model latency vs throughput tradeoffs
+
+
+
 ---
 
 ### Q1 — AI vs ML vs Deep Learning
